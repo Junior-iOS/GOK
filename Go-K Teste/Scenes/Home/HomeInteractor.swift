@@ -15,19 +15,40 @@
 import UIKit
 
 protocol HomeBusinessLogic {
+    var numberOfRows: Int { get }
+    
+    func cellForRow(at indexPath: IndexPath) -> Home.Response?
+    func didSelectRowAt(indexPath: IndexPath)
     func fetchList()
+    func getItems() -> [Home.Response]
 }
 
 protocol HomeDataStore {
-    
+    var selectedItem: Home.Response? { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
     
+    var homeList = [Home.Response]()
+    var selectedItem: Home.Response?
+    
     init(worker: HomeWorker = HomeWorker()) {
         self.worker = worker
+    }
+    
+    var numberOfRows: Int {
+        return homeList.count
+    }
+    
+    func didSelectRowAt(indexPath: IndexPath) {
+        selectedItem = homeList[indexPath.row]
+        presenter?.presentSelectedItem()
+    }
+    
+    func cellForRow(at indexPath: IndexPath) -> Home.Response? {
+        return homeList[indexPath.row]
     }
     
     func fetchList() {
@@ -35,10 +56,15 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     private func handleSuccess(_ response: Home.Response) {
-        
+        homeList.append(response)
+        presenter?.reloadTableView()
     }
     
     private func handleError(_ error: Error) {
         
+    }
+    
+    func getItems() -> [Home.Response] {
+        return homeList
     }
 }

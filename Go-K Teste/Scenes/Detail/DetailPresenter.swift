@@ -1,5 +1,5 @@
 //
-//  HomePresenter.swift
+//  DetailPresenter.swift
 //  Go-K Teste
 //
 //  Created by Junior Silva on 07/10/20.
@@ -14,19 +14,12 @@
 
 import UIKit
 
-protocol HomePresentationLogic {
-    func reloadTableView()
-    func presentSelectedItem()
+protocol DetailPresentationLogic {
+    
 }
 
-class HomePresenter: HomePresentationLogic {
-    weak var viewController: HomeDisplayLogic?
+class DetailPresenter: DetailPresentationLogic {
+    weak var viewController: DetailDisplayLogic?
 
-    func reloadTableView() {
-        viewController?.reloadTableView()
-    }
     
-    func presentSelectedItem() {
-        viewController?.displaySelectedItem()
-    }
 }

@@ -1,5 +1,5 @@
 //
-//  HomePresenter.swift
+//  DetailWorker.swift
 //  Go-K Teste
 //
 //  Created by Junior Silva on 07/10/20.
@@ -12,21 +12,9 @@
 // This tag below is used to create the testable files from the Cuckoo pod
 // CUCKOO_TESTABLE
 
-import UIKit
+import Foundation
 
-protocol HomePresentationLogic {
-    func reloadTableView()
-    func presentSelectedItem()
-}
-
-class HomePresenter: HomePresentationLogic {
-    weak var viewController: HomeDisplayLogic?
-
-    func reloadTableView() {
-        viewController?.reloadTableView()
-    }
-    
-    func presentSelectedItem() {
-        viewController?.displaySelectedItem()
+class DetailWorker {
+    func doSomeWork() {
     }
 }

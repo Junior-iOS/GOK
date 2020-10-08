@@ -13,7 +13,8 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
-    
+    func reloadTableView()
+    func displaySelectedItem()
 }
 
 class HomeViewController: UIViewController {
@@ -22,6 +23,10 @@ class HomeViewController: UIViewController {
     
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+    
+    var tableHeaderView = HeaderView()
+    let kTableViewHeaderHeight: CGFloat = 220
+    let kScreenWidth: CGFloat = 414
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -48,13 +53,46 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         interactor?.fetchList()
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorColor = .clear
+        tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: HomeTableViewCell.homeCellIdentifier)
     }
 
 }
 
 extension HomeViewController: HomeDisplayLogic {
 
+    func reloadTableView() {
+        tableView.reloadData()
+    }
     
+    func displaySelectedItem() {
+        router?.routeToSelectedItem()
+    }
 
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return interactor?.numberOfRows ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.homeCellIdentifier, for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
+        cell.configure(interactor?.cellForRow(at: indexPath))
+        //tableHeaderView.items = interactor?.getItems()
+        return cell
+    }
+    
 }

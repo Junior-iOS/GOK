@@ -7,21 +7,24 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var imgContent: UIImageView!
     
+    static let homeCellIdentifier = "homeCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        imgContent.layer.cornerRadius = 10
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(_ viewModel: Home.Response?) {
+        guard let viewModel = viewModel, let image = viewModel.cash?.bannerURL else { return }
+        lblTitle.text = viewModel.cash?.title
+        imgContent?.sd_setImage(with: URL(string: image), completed: nil)
     }
     
 }
