@@ -23,18 +23,18 @@
 		1411C4B7252E42940061A6B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4B1252E42940061A6B0 /* HomeViewController.swift */; };
 		1411C4B8252E42940061A6B0 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4B2252E42940061A6B0 /* HomeInteractor.swift */; };
 		1411C4BE252E667A0061A6B0 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1411C4BD252E667A0061A6B0 /* HomeViewController.xib */; };
-		1411C4C2252E69890061A6B0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4C0252E69890061A6B0 /* HomeTableViewCell.swift */; };
-		1411C4C3252E69890061A6B0 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1411C4C1252E69890061A6B0 /* HomeTableViewCell.xib */; };
 		1411C4CB252EA1EA0061A6B0 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4C5252EA1EA0061A6B0 /* DetailPresenter.swift */; };
 		1411C4CC252EA1EA0061A6B0 /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4C6252EA1EA0061A6B0 /* DetailWorker.swift */; };
 		1411C4CD252EA1EA0061A6B0 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4C7252EA1EA0061A6B0 /* DetailRouter.swift */; };
 		1411C4CE252EA1EA0061A6B0 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4C8252EA1EA0061A6B0 /* DetailModels.swift */; };
 		1411C4CF252EA1EA0061A6B0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4C9252EA1EA0061A6B0 /* DetailViewController.swift */; };
 		1411C4D0252EA1EA0061A6B0 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4CA252EA1EA0061A6B0 /* DetailInteractor.swift */; };
-		1411C4D4252EA3F40061A6B0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4D3252EA3F40061A6B0 /* HeaderView.swift */; };
-		1411C4D6252EA4EE0061A6B0 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1411C4D5252EA4EE0061A6B0 /* HeaderView.xib */; };
-		1411C4DD252EA8940061A6B0 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4DB252EA8940061A6B0 /* HeaderViewCell.swift */; };
-		1411C4DE252EA8940061A6B0 /* HeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1411C4DC252EA8940061A6B0 /* HeaderViewCell.xib */; };
+		14C270A7252FA60C00E95D71 /* SpotlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C270A5252FA60C00E95D71 /* SpotlightCell.swift */; };
+		14C270A8252FA60C00E95D71 /* SpotlightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C270A6252FA60C00E95D71 /* SpotlightCell.xib */; };
+		14C270AB252FB4FB00E95D71 /* CashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C270A9252FB4FB00E95D71 /* CashCell.swift */; };
+		14C270AC252FB4FB00E95D71 /* CashCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C270AA252FB4FB00E95D71 /* CashCell.xib */; };
+		14C270AF252FB50F00E95D71 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C270AD252FB50F00E95D71 /* ProductCell.swift */; };
+		14C270B0252FB50F00E95D71 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C270AE252FB50F00E95D71 /* ProductCell.xib */; };
 		3DCE36E82941003C47DB942F /* Pods_Go_K_TesteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D7367832ECBA23A1DDCF7A /* Pods_Go_K_TesteTests.framework */; };
 		C71ED7F8D406DE586C47268C /* Pods_Go_K_Teste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE141EC1356DD5A41C9F649 /* Pods_Go_K_Teste.framework */; };
 /* End PBXBuildFile section */
@@ -52,7 +52,7 @@
 /* Begin PBXFileReference section */
 		0077FA44E0AF4BE9884DC385 /* Pods-Go-K Teste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K Teste.release.xcconfig"; path = "Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste.release.xcconfig"; sourceTree = "<group>"; };
 		0BDF1D1147CB8D2C7BAAA6C5 /* Pods-Go-K Teste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K Teste.debug.xcconfig"; path = "Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste.debug.xcconfig"; sourceTree = "<group>"; };
-		1411C47A252E405F0061A6B0 /* Go-K Teste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go-K Teste.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1411C47A252E405F0061A6B0 /* Go-K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go-K.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1411C47D252E405F0061A6B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1411C47F252E405F0061A6B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1411C486252E40600061A6B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,18 +72,18 @@
 		1411C4B1252E42940061A6B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1411C4B2252E42940061A6B0 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		1411C4BD252E667A0061A6B0 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		1411C4C0252E69890061A6B0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		1411C4C1252E69890061A6B0 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		1411C4C5252EA1EA0061A6B0 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		1411C4C6252EA1EA0061A6B0 /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
 		1411C4C7252EA1EA0061A6B0 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		1411C4C8252EA1EA0061A6B0 /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
 		1411C4C9252EA1EA0061A6B0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1411C4CA252EA1EA0061A6B0 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
-		1411C4D3252EA3F40061A6B0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		1411C4D5252EA4EE0061A6B0 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
-		1411C4DB252EA8940061A6B0 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
-		1411C4DC252EA8940061A6B0 /* HeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewCell.xib; sourceTree = "<group>"; };
+		14C270A5252FA60C00E95D71 /* SpotlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotlightCell.swift; sourceTree = "<group>"; };
+		14C270A6252FA60C00E95D71 /* SpotlightCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotlightCell.xib; sourceTree = "<group>"; };
+		14C270A9252FB4FB00E95D71 /* CashCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCell.swift; sourceTree = "<group>"; };
+		14C270AA252FB4FB00E95D71 /* CashCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CashCell.xib; sourceTree = "<group>"; };
+		14C270AD252FB50F00E95D71 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		14C270AE252FB50F00E95D71 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		6020E985C4C95351BD178A8E /* Pods-Go-K TesteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K TesteTests.release.xcconfig"; path = "Target Support Files/Pods-Go-K TesteTests/Pods-Go-K TesteTests.release.xcconfig"; sourceTree = "<group>"; };
 		9BE141EC1356DD5A41C9F649 /* Pods_Go_K_Teste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go_K_Teste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D7367832ECBA23A1DDCF7A /* Pods_Go_K_TesteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go_K_TesteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +124,7 @@
 		1411C47B252E405F0061A6B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1411C47A252E405F0061A6B0 /* Go-K Teste.app */,
+				1411C47A252E405F0061A6B0 /* Go-K.app */,
 				1411C490252E40600061A6B0 /* Go-K TesteTests.xctest */,
 			);
 			name = Products;
@@ -215,42 +215,20 @@
 		1411C4B9252E5D730061A6B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1411C4BA252E5D7A0061A6B0 /* Header */,
-				1411C4BC252E5EA50061A6B0 /* Body */,
-				1411C4BB252E5D810061A6B0 /* Footer */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		1411C4BA252E5D7A0061A6B0 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				1411C4D1252EA3C40061A6B0 /* Views */,
-				1411C4D2252EA3CC0061A6B0 /* Cell */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
-		1411C4BB252E5D810061A6B0 /* Footer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Footer;
-			sourceTree = "<group>";
-		};
-		1411C4BC252E5EA50061A6B0 /* Body */ = {
-			isa = PBXGroup;
-			children = (
 				1411C4BF252E694C0061A6B0 /* Cell */,
 			);
-			path = Body;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1411C4BF252E694C0061A6B0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				1411C4C0252E69890061A6B0 /* HomeTableViewCell.swift */,
-				1411C4C1252E69890061A6B0 /* HomeTableViewCell.xib */,
+				14C270A5252FA60C00E95D71 /* SpotlightCell.swift */,
+				14C270A6252FA60C00E95D71 /* SpotlightCell.xib */,
+				14C270A9252FB4FB00E95D71 /* CashCell.swift */,
+				14C270AA252FB4FB00E95D71 /* CashCell.xib */,
+				14C270AD252FB50F00E95D71 /* ProductCell.swift */,
+				14C270AE252FB50F00E95D71 /* ProductCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -266,24 +244,6 @@
 				1411C4C9252EA1EA0061A6B0 /* DetailViewController.swift */,
 			);
 			path = Detail;
-			sourceTree = "<group>";
-		};
-		1411C4D1252EA3C40061A6B0 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				1411C4D3252EA3F40061A6B0 /* HeaderView.swift */,
-				1411C4D5252EA4EE0061A6B0 /* HeaderView.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		1411C4D2252EA3CC0061A6B0 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				1411C4DB252EA8940061A6B0 /* HeaderViewCell.swift */,
-				1411C4DC252EA8940061A6B0 /* HeaderViewCell.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		C5F76BC12A476F36187EFE10 /* Frameworks */ = {
@@ -325,7 +285,7 @@
 			);
 			name = "Go-K Teste";
 			productName = "Go-K Teste";
-			productReference = 1411C47A252E405F0061A6B0 /* Go-K Teste.app */;
+			productReference = 1411C47A252E405F0061A6B0 /* Go-K.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1411C48F252E40600061A6B0 /* Go-K TesteTests */ = {
@@ -390,11 +350,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C270A8252FA60C00E95D71 /* SpotlightCell.xib in Resources */,
 				1411C48A252E40600061A6B0 /* LaunchScreen.storyboard in Resources */,
-				1411C4D6252EA4EE0061A6B0 /* HeaderView.xib in Resources */,
 				1411C487252E40600061A6B0 /* Assets.xcassets in Resources */,
-				1411C4DE252EA8940061A6B0 /* HeaderViewCell.xib in Resources */,
-				1411C4C3252E69890061A6B0 /* HomeTableViewCell.xib in Resources */,
+				14C270B0252FB50F00E95D71 /* ProductCell.xib in Resources */,
+				14C270AC252FB4FB00E95D71 /* CashCell.xib in Resources */,
 				1411C4BE252E667A0061A6B0 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,7 +440,6 @@
 				1411C4B3252E42940061A6B0 /* HomePresenter.swift in Sources */,
 				1411C4CD252EA1EA0061A6B0 /* DetailRouter.swift in Sources */,
 				1411C47E252E405F0061A6B0 /* AppDelegate.swift in Sources */,
-				1411C4C2252E69890061A6B0 /* HomeTableViewCell.swift in Sources */,
 				1411C480252E405F0061A6B0 /* SceneDelegate.swift in Sources */,
 				1411C4CC252EA1EA0061A6B0 /* DetailWorker.swift in Sources */,
 				1411C4B8252E42940061A6B0 /* HomeInteractor.swift in Sources */,
@@ -490,14 +449,15 @@
 				1411C4CF252EA1EA0061A6B0 /* DetailViewController.swift in Sources */,
 				1411C4CE252EA1EA0061A6B0 /* DetailModels.swift in Sources */,
 				1411C4AA252E415E0061A6B0 /* NetworkError.swift in Sources */,
+				14C270AF252FB50F00E95D71 /* ProductCell.swift in Sources */,
 				1411C4A2252E40D30061A6B0 /* BaseViewController.swift in Sources */,
 				1411C4B6252E42940061A6B0 /* HomeModels.swift in Sources */,
-				1411C4DD252EA8940061A6B0 /* HeaderViewCell.swift in Sources */,
-				1411C4D4252EA3F40061A6B0 /* HeaderView.swift in Sources */,
 				1411C4B7252E42940061A6B0 /* HomeViewController.swift in Sources */,
 				1411C4B4252E42940061A6B0 /* HomeWorker.swift in Sources */,
+				14C270AB252FB4FB00E95D71 /* CashCell.swift in Sources */,
 				1411C4B5252E42940061A6B0 /* HomeRouter.swift in Sources */,
 				1411C4A8252E41510061A6B0 /* NetworkProvider.swift in Sources */,
+				14C270A7252FA60C00E95D71 /* SpotlightCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +618,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.njdevelopment.Go-K-Teste";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Go-K";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -677,7 +637,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.njdevelopment.Go-K-Teste";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Go-K";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

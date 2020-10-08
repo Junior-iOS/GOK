@@ -9,8 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Go_K_Teste" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="5x5-Tf-hv7" id="OdB-8m-tHo"/>
-                <outlet property="view" destination="iN0-l3-epB" id="WdF-47-DRS"/>
+                <outlet property="activityIndicator" destination="ajY-2m-Odj" id="RLF-iY-2Ll"/>
+                <outlet property="collectionView" destination="BwI-Zg-uF3" id="UXj-P1-Jtb"/>
+                <outlet property="view" destination="iN0-l3-epB" id="kKb-qE-xbp"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,17 +19,28 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5x5-Tf-hv7">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BwI-Zg-uF3">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VT5-Ir-ggB">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ajY-2m-Odj">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="5x5-Tf-hv7" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="KCx-t0-ra6"/>
-                <constraint firstItem="5x5-Tf-hv7" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="YOX-rx-lIV"/>
-                <constraint firstItem="5x5-Tf-hv7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bj6-qj-3HJ"/>
-                <constraint firstItem="5x5-Tf-hv7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="keR-el-Zou"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BwI-Zg-uF3" secondAttribute="trailing" id="0mK-aP-leT"/>
+                <constraint firstItem="ajY-2m-Odj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6hb-6j-eJU"/>
+                <constraint firstItem="BwI-Zg-uF3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ByM-I9-d6v"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="BwI-Zg-uF3" secondAttribute="bottom" id="Dnd-lP-p6s"/>
+                <constraint firstItem="ajY-2m-Odj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i9O-IU-P5I"/>
+                <constraint firstItem="BwI-Zg-uF3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zZp-yR-0nM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="145.98214285714286"/>

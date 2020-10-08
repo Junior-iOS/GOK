@@ -20,7 +20,6 @@ protocol HomeBusinessLogic {
     func cellForRow(at indexPath: IndexPath) -> Home.Response?
     func didSelectRowAt(indexPath: IndexPath)
     func fetchList()
-    func getItems() -> [Home.Response]
 }
 
 protocol HomeDataStore {
@@ -52,19 +51,18 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     func fetchList() {
-        worker?.searchList().done(handleSuccess).catch(handleError)
+        worker?.searchList().done(handleSuccess).catch(handleError).finally {
+            self.presenter?.stopsActivityIndicator()
+        }
     }
     
     private func handleSuccess(_ response: Home.Response) {
         homeList.append(response)
-        presenter?.reloadTableView()
+        presenter?.reloadCollectionView()
     }
     
     private func handleError(_ error: Error) {
         
     }
     
-    func getItems() -> [Home.Response] {
-        return homeList
-    }
 }

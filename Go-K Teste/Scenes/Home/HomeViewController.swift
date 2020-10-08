@@ -13,31 +13,29 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
-    func reloadTableView()
+    func reloadCollectionView()
     func displaySelectedItem()
+    func stopsActivityIndicator()
 }
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
     
-    var tableHeaderView = HeaderView()
-    let kTableViewHeaderHeight: CGFloat = 220
-    let kScreenWidth: CGFloat = 414
-
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-
+    
     private func setup() {
         let viewController = self
         let interactor = HomeInteractor()
@@ -53,46 +51,51 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        setupCollectionView()
         interactor?.fetchList()
     }
     
-    private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorColor = .clear
-        tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: HomeTableViewCell.homeCellIdentifier)
+    private func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "SpotlightCell", bundle: nil), forCellWithReuseIdentifier: SpotlightCell.spotlightCellIdentifier)
     }
-
+    
 }
 
 extension HomeViewController: HomeDisplayLogic {
-
-    func reloadTableView() {
-        tableView.reloadData()
+    
+    func reloadCollectionView() {
+        collectionView.reloadData()
     }
     
     func displaySelectedItem() {
         router?.routeToSelectedItem()
     }
-
+    
+    func stopsActivityIndicator() {
+        activityIndicator.stopAnimating()
+    }
+    
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return interactor?.numberOfRows ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.homeCellIdentifier, for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpotlightCell.spotlightCellIdentifier, for: indexPath) as? SpotlightCell else { return UICollectionViewCell() }
         cell.configure(interactor?.cellForRow(at: indexPath))
-        //tableHeaderView.items = interactor?.getItems()
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 320, height: 167)
+    }
 }
