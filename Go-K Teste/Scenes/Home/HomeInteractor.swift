@@ -51,13 +51,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     func numberOfRows(for section: Int) -> Int {
-        if section == 0 {
-            return spotlights?.count ?? 0
-        } else if section == 1 {
-            return 1
-        } else {
-            return products?.count ?? 0
-        }
+        return 1
     }
     
     func didSelectRowAt(indexPath: IndexPath) {

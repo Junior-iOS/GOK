@@ -1,19 +1,18 @@
 //
-//  HomeCollectionViewCell.swift
+//  SpotlightCollectionViewCell.swift
 //  Go-K Teste
 //
-//  Created by Junior Silva on 08/10/20.
+//  Created by Junior Silva on 09/10/20.
 //  Copyright © 2020 Junior Silva. All rights reserved.
 //
 
 import UIKit
-import SDWebImage
 
-class SpotlightCell: UITableViewCell {
+class SpotlightCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imgContent: UIImageView!
     
-    static let spotlightCellIdentifier = "spotlightCell"
+    static let spotlightCollectionCell = "spotlightCollectionCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()

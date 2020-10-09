@@ -58,20 +58,10 @@ class HomeViewController: UIViewController {
     private func setupCollectionView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "SpotlightCell", bundle: nil), forCellReuseIdentifier: SpotlightCell.spotlightCellIdentifier)
         tableView.register(UINib(nibName: "CashCell", bundle: nil), forCellReuseIdentifier: CashCell.cashCellIdentifier)
         //tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: ProductCell.productCellIdentifier)
-        
-//        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            layout.scrollDirection = .horizontal
-//            layout.sectionInsetReference = .fromContentInset
-//            layout.invalidateLayout()
-//            collectionView.preservesSuperviewLayoutMargins = true
-//        }
-//        collectionView.showsHorizontalScrollIndicator = false
-//        collectionView.showsVerticalScrollIndicator = false
-//        collectionView.alwaysBounceHorizontal = true
-//        collectionView.alwaysBounceVertical = false
     }
     
 }
@@ -92,7 +82,7 @@ extension HomeViewController: HomeDisplayLogic {
     
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource/*, UICollectionViewDelegateFlowLayout */{
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -103,17 +93,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource/*, UICo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //if section == 1 {
-            return interactor?.numberOfRows(for: section) ?? 0
-        //}
-        //return 2
+        return interactor?.numberOfRows(for: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            return UITableViewCell()
-            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SpotlightCell.spotlightCellIdentifier, for: indexPath) as? SpotlightCell else { return UITableViewCell() }
+            cell.configure(interactor?.cellForRow(for: indexPath.section, at: indexPath) as? [Spotlight])
+            return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CashCell.cashCellIdentifier, for: indexPath) as? CashCell else { return UITableViewCell() }
             cell.configure(interactor?.cellForRow(for: indexPath.section, at: indexPath) as? Cash)
@@ -123,8 +111,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource/*, UICo
             return UITableViewCell()
         }
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: view.frame.width - 20, height: 150)
-//    }
 }
