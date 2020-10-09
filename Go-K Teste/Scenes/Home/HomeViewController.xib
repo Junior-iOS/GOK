@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="pr4-e4-Vxf">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="54" width="414" height="808"/>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
@@ -28,14 +28,14 @@
                     <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                 </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="pr4-e4-Vxf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1QK-9L-Neq"/>
                 <constraint firstItem="ajY-2m-Odj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6hb-6j-eJU"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pr4-e4-Vxf" secondAttribute="trailing" id="Z4V-yq-RQb"/>
-                <constraint firstItem="pr4-e4-Vxf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bdB-6X-54i"/>
+                <constraint firstItem="pr4-e4-Vxf" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="W6A-bq-oV0"/>
+                <constraint firstItem="pr4-e4-Vxf" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="htc-RD-1m2"/>
                 <constraint firstItem="ajY-2m-Odj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i9O-IU-P5I"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pr4-e4-Vxf" secondAttribute="bottom" id="jm3-VI-00D"/>
+                <constraint firstItem="pr4-e4-Vxf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ppy-NY-FaF"/>
+                <constraint firstItem="pr4-e4-Vxf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="yym-Qw-ESk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="145.98214285714286"/>

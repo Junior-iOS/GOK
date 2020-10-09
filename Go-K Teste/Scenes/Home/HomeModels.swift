@@ -16,7 +16,7 @@ enum Home {
 
     struct Response: Codable {
         var spotlight: [Spotlight]?
-        var products: [Products]?
+        var products: [Product]?
         var cash: Cash?
     }
     
@@ -28,7 +28,7 @@ struct Spotlight: Codable {
     let description: String
 }
 
-struct Products: Codable {
+struct Product: Codable {
     let name: String
     let imageURL: String
     let description: String

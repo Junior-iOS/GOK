@@ -53,6 +53,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         interactor?.fetchList()
+        navigationItem.title = "DigiBank"
     }
     
     private func setupCollectionView() {
@@ -61,7 +62,7 @@ class HomeViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "SpotlightCell", bundle: nil), forCellReuseIdentifier: SpotlightCell.spotlightCellIdentifier)
         tableView.register(UINib(nibName: "CashCell", bundle: nil), forCellReuseIdentifier: CashCell.cashCellIdentifier)
-        //tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: ProductCell.productCellIdentifier)
+        tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: ProductCell.productCellIdentifier)
     }
     
 }
@@ -108,7 +109,24 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
             
         default:
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.productCellIdentifier, for: indexPath) as? ProductCell else { return UITableViewCell() }
+            cell.configure(interactor?.cellForRow(for: indexPath.section, at: indexPath) as? [Product])
+            return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Olá, Maria"
+        case 2:
+            return "Produtos"
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
     }
 }

@@ -25,6 +25,7 @@ class BaseViewController: UINavigationController {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.shadowColor = .clear
         navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        navigationBar.prefersLargeTitles = true
         navigationBar.isTranslucent = true
         navigationItem.largeTitleDisplayMode = .automatic
     }

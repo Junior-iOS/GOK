@@ -27,7 +27,7 @@ protocol HomeDataStore {
     var selectedItem: Home.Response? { get set }
     var spotlights: [Spotlight]?  { get set }
     var cash: Cash? { get set }
-    var products: [Products]? { get set }
+    var products: [Product]? { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
@@ -39,7 +39,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     var spotlights: [Spotlight]?
     var cash: Cash?
-    var products: [Products]?
+    var products: [Product]?
     var sections: [AnyObject]?
     
     init(worker: HomeWorker = HomeWorker()) {
