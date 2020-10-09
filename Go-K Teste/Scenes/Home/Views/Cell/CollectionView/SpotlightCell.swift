@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class SpotlightCell: UICollectionViewCell {
+class SpotlightCell: UITableViewCell {
 
     @IBOutlet weak var imgContent: UIImageView!
     
@@ -20,11 +20,9 @@ class SpotlightCell: UICollectionViewCell {
         imgContent.layer.cornerRadius = 10
     }
 
-    func configure(_ viewModel: Home.Response?) {
-        guard let spotlights = viewModel?.spotlight else { return }
-        for spotlight in spotlights {
-            imgContent.sd_setImage(with: URL(string: spotlight.bannerURL), completed: nil)
-        }
+    func configure(_ viewModel: Spotlight?) {
+        guard let spotlight = viewModel else { return }
+        imgContent.sd_setImage(with: URL(string: spotlight.bannerURL), completed: nil)
     }
 
 }

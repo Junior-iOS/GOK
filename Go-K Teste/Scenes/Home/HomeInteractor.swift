@@ -15,15 +15,19 @@
 import UIKit
 
 protocol HomeBusinessLogic {
-    var numberOfRows: Int { get }
+    func numberOfRows(for section: Int) -> Int
+    var numberOfSections: Int { get }
     
-    func cellForRow(at indexPath: IndexPath) -> Home.Response?
+    func cellForRow(for section: Int, at indexPath: IndexPath) -> AnyObject?
     func didSelectRowAt(indexPath: IndexPath)
     func fetchList()
 }
 
 protocol HomeDataStore {
     var selectedItem: Home.Response? { get set }
+    var spotlights: [Spotlight]?  { get set }
+    var cash: Cash? { get set }
+    var products: [Products]? { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
@@ -33,12 +37,27 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var homeList = [Home.Response]()
     var selectedItem: Home.Response?
     
+    var spotlights: [Spotlight]?
+    var cash: Cash?
+    var products: [Products]?
+    var sections: [AnyObject]?
+    
     init(worker: HomeWorker = HomeWorker()) {
         self.worker = worker
     }
     
-    var numberOfRows: Int {
-        return homeList.count
+    var numberOfSections: Int {
+        return sections?.count ?? 0
+    }
+    
+    func numberOfRows(for section: Int) -> Int {
+        if section == 0 {
+            return spotlights?.count ?? 0
+        } else if section == 1 {
+            return 1
+        } else {
+            return products?.count ?? 0
+        }
     }
     
     func didSelectRowAt(indexPath: IndexPath) {
@@ -46,8 +65,15 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         presenter?.presentSelectedItem()
     }
     
-    func cellForRow(at indexPath: IndexPath) -> Home.Response? {
-        return homeList[indexPath.row]
+    func cellForRow(for section: Int, at indexPath: IndexPath) -> AnyObject? {
+        switch section {
+        case 0:
+            return spotlights as AnyObject?
+        case 1:
+            return cash as AnyObject?
+        default:
+            return products as AnyObject?
+        }
     }
     
     func fetchList() {
@@ -57,8 +83,11 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     private func handleSuccess(_ response: Home.Response) {
-        homeList.append(response)
-        presenter?.reloadCollectionView()
+        spotlights = response.spotlight
+        cash = response.cash
+        products = response.products
+        sections = [spotlights, cash, products] as [AnyObject]
+        presenter?.reloadTableView()
     }
     
     private func handleError(_ error: Error) {

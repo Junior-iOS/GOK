@@ -15,7 +15,7 @@
 import UIKit
 
 protocol HomePresentationLogic {
-    func reloadCollectionView()
+    func reloadTableView()
     func presentSelectedItem()
     func stopsActivityIndicator()
 }
@@ -23,8 +23,8 @@ protocol HomePresentationLogic {
 class HomePresenter: HomePresentationLogic {
     weak var viewController: HomeDisplayLogic?
 
-    func reloadCollectionView() {
-        viewController?.reloadCollectionView()
+    func reloadTableView() {
+        viewController?.reloadTableView()
     }
     
     func presentSelectedItem() {

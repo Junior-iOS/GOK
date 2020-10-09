@@ -13,14 +13,14 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
-    func reloadCollectionView()
+    func reloadTableView()
     func displaySelectedItem()
     func stopsActivityIndicator()
 }
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var interactor: HomeBusinessLogic?
@@ -56,17 +56,30 @@ class HomeViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "SpotlightCell", bundle: nil), forCellWithReuseIdentifier: SpotlightCell.spotlightCellIdentifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "SpotlightCell", bundle: nil), forCellReuseIdentifier: SpotlightCell.spotlightCellIdentifier)
+        tableView.register(UINib(nibName: "CashCell", bundle: nil), forCellReuseIdentifier: CashCell.cashCellIdentifier)
+        //tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: ProductCell.productCellIdentifier)
+        
+//        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            layout.scrollDirection = .horizontal
+//            layout.sectionInsetReference = .fromContentInset
+//            layout.invalidateLayout()
+//            collectionView.preservesSuperviewLayoutMargins = true
+//        }
+//        collectionView.showsHorizontalScrollIndicator = false
+//        collectionView.showsVerticalScrollIndicator = false
+//        collectionView.alwaysBounceHorizontal = true
+//        collectionView.alwaysBounceVertical = false
     }
     
 }
 
 extension HomeViewController: HomeDisplayLogic {
     
-    func reloadCollectionView() {
-        collectionView.reloadData()
+    func reloadTableView() {
+        tableView.reloadData()
     }
     
     func displaySelectedItem() {
@@ -79,23 +92,39 @@ extension HomeViewController: HomeDisplayLogic {
     
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource/*, UICollectionViewDelegateFlowLayout */{
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return interactor?.numberOfRows ?? 0
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return interactor?.numberOfSections ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpotlightCell.spotlightCellIdentifier, for: indexPath) as? SpotlightCell else { return UICollectionViewCell() }
-        cell.configure(interactor?.cellForRow(at: indexPath))
-        return cell
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //if section == 1 {
+            return interactor?.numberOfRows(for: section) ?? 0
+        //}
+        //return 2
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 320, height: 167)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            return UITableViewCell()
+            
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CashCell.cashCellIdentifier, for: indexPath) as? CashCell else { return UITableViewCell() }
+            cell.configure(interactor?.cellForRow(for: indexPath.section, at: indexPath) as? Cash)
+            return cell
+            
+        default:
+            return UITableViewCell()
+        }
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: view.frame.width - 20, height: 150)
+//    }
 }
