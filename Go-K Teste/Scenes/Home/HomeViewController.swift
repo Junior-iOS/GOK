@@ -51,12 +51,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+        setupTableView()
         interactor?.fetchList()
-        navigationItem.title = "DigiBank"
+        navigationItem.title = "Digio"
     }
     
-    private func setupCollectionView() {
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -83,10 +83,16 @@ extension HomeViewController: HomeDisplayLogic {
     
 }
 
+extension HomeViewController: SpotlightCellDelegate {
+    func didSelectRowAt(_ indexPath: IndexPath) {
+        interactor?.didSelectRowAt(indexPath: indexPath)
+    }
+}
+
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        interactor?.didSelectRowAt(indexPath: indexPath)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -102,6 +108,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SpotlightCell.spotlightCellIdentifier, for: indexPath) as? SpotlightCell else { return UITableViewCell() }
             cell.configure(interactor?.cellForRow(for: indexPath.section, at: indexPath) as? [Spotlight])
+            cell.delegate = self
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CashCell.cashCellIdentifier, for: indexPath) as? CashCell else { return UITableViewCell() }

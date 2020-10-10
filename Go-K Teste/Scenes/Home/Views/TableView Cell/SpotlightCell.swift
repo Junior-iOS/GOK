@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol SpotlightCellDelegate: class {
+    func didSelectRowAt(_ indexPath: IndexPath)
+}
+
 class SpotlightCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     static let spotlightCellIdentifier = "spotlightCellIdentifier"
     var spotlight: [Spotlight]?
+    weak var delegate: SpotlightCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,7 +54,7 @@ class SpotlightCell: UITableViewCell {
 extension SpotlightCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        delegate?.didSelectRowAt(indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

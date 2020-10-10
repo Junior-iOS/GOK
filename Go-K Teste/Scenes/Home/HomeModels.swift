@@ -13,13 +13,11 @@
 import UIKit
 
 enum Home {
-
     struct Response: Codable {
         var spotlight: [Spotlight]?
         var products: [Product]?
         var cash: Cash?
     }
-    
 }
 
 struct Spotlight: Codable {

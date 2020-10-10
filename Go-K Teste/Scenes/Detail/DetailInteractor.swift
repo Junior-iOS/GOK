@@ -19,12 +19,12 @@ protocol DetailBusinessLogic {
 }
 
 protocol DetailDataStore {
-    var selectedItem: Home.Response? { get set }
+    var selectedItem: AnyObject? { get set }
 }
 
 class DetailInteractor: DetailBusinessLogic, DetailDataStore {
     var presenter: DetailPresentationLogic?
     var worker: DetailWorker?
     
-    var selectedItem: Home.Response?
+    var selectedItem: AnyObject?
 }

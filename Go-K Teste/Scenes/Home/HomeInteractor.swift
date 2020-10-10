@@ -24,7 +24,7 @@ protocol HomeBusinessLogic {
 }
 
 protocol HomeDataStore {
-    var selectedItem: Home.Response? { get set }
+    var selectedItem: AnyObject? { get set }
     var spotlights: [Spotlight]?  { get set }
     var cash: Cash? { get set }
     var products: [Product]? { get set }
@@ -35,7 +35,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var worker: HomeWorker?
     
     var homeList = [Home.Response]()
-    var selectedItem: Home.Response?
+    var selectedItem: AnyObject?
     
     var spotlights: [Spotlight]?
     var cash: Cash?
@@ -44,30 +44,6 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     init(worker: HomeWorker = HomeWorker()) {
         self.worker = worker
-    }
-    
-    var numberOfSections: Int {
-        return sections?.count ?? 0
-    }
-    
-    func numberOfRows(for section: Int) -> Int {
-        return 1
-    }
-    
-    func didSelectRowAt(indexPath: IndexPath) {
-        selectedItem = homeList[indexPath.row]
-        presenter?.presentSelectedItem()
-    }
-    
-    func cellForRow(for section: Int, at indexPath: IndexPath) -> AnyObject? {
-        switch section {
-        case 0:
-            return spotlights as AnyObject?
-        case 1:
-            return cash as AnyObject?
-        default:
-            return products as AnyObject?
-        }
     }
     
     func fetchList() {
@@ -86,6 +62,30 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     private func handleError(_ error: Error) {
         
+    }
+    
+    var numberOfSections: Int {
+        return sections?.count ?? 0
+    }
+    
+    func numberOfRows(for section: Int) -> Int {
+        return 1
+    }
+    
+    func didSelectRowAt(indexPath: IndexPath) {
+        selectedItem = sections?[indexPath.row]
+        presenter?.presentSelectedItem()
+    }
+    
+    func cellForRow(for section: Int, at indexPath: IndexPath) -> AnyObject? {
+        switch section {
+        case 0:
+            return spotlights as AnyObject?
+        case 1:
+            return cash as AnyObject?
+        default:
+            return products as AnyObject?
+        }
     }
     
 }

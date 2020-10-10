@@ -18,6 +18,7 @@ protocol DetailDisplayLogic: class {
 
 class DetailViewController: UIViewController {
     
+    
     var interactor: DetailBusinessLogic?
     var router: (NSObjectProtocol & DetailRoutingLogic & DetailDataPassing)?
 
