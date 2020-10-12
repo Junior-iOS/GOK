@@ -67,7 +67,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     private func handleError(_ error: Error) {
-        
+        presenter?.presentEmptyState()
     }
     
     var numberOfSections: Int {

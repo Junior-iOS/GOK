@@ -28,7 +28,16 @@ class DetailViewController: UIViewController {
     let kScreenWidth = UIScreen.main.bounds.width
     let kScreenHeight = UIScreen.main.bounds.height
     let kHeaderContentMargin: CGFloat = 40
-    let kHeaderLableMargin: CGFloat = 16
+    let kHeaderLabelMargin: CGFloat = 16
+    
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.alpha = 0
+        view.backgroundColor = .secondarySystemBackground
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
     
     lazy var headerContentView: UIView = {
         let view = UIView()
@@ -55,16 +64,6 @@ class DetailViewController: UIViewController {
         return view
     }()
     
-    lazy var contentView: UIView = {
-        let view = UIView()
-        view.isAccessibilityElement = true
-        view.alpha = 0
-        view.backgroundColor = .secondarySystemBackground
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
-    }()
-    
     private lazy var lblDescription: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Avenir Next", size: 20)
@@ -80,7 +79,6 @@ class DetailViewController: UIViewController {
     
     lazy var imageContent: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "emptyState")
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = 40
         imageView.contentMode = .scaleAspectFill
@@ -175,8 +173,8 @@ extension DetailViewController: CustomViewDelegate {
         ])
         
         NSLayoutConstraint.activate([headerLabel.topAnchor.constraint(equalTo: headerContentView.topAnchor, constant: 0),
-                                     headerLabel.leadingAnchor.constraint(equalTo: headerContentView.leadingAnchor, constant: kHeaderLableMargin),
-                                     headerLabel.trailingAnchor.constraint(equalTo: headerContentView.trailingAnchor, constant: kHeaderLableMargin),
+                                     headerLabel.leadingAnchor.constraint(equalTo: headerContentView.leadingAnchor, constant: kHeaderLabelMargin),
+                                     headerLabel.trailingAnchor.constraint(equalTo: headerContentView.trailingAnchor, constant: kHeaderLabelMargin),
                                      headerLabel.bottomAnchor.constraint(equalTo: separatorView.topAnchor, constant: 0)
         
         ])

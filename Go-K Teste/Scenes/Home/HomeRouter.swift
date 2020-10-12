@@ -16,6 +16,7 @@ import UIKit
     func routeToSelectedSpotlight()
     func routeToSelectedCash()
     func routeToSelectedProduct()
+    func routeToEmptyState()
 }
 
 protocol HomeDataPassing {
@@ -60,6 +61,11 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     
     func passProductDataToDetail(source: HomeDataStore, destination: inout DetailDataStore) {
         destination.selectedProduct = source.selectedProduct
+    }
+    
+    func routeToEmptyState() {
+        let vc = DetailViewController()
+        viewController?.present(vc, animated: true)
     }
     
 }

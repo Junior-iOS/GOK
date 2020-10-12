@@ -18,6 +18,7 @@ protocol HomeDisplayLogic: class {
     func displaySelectedSpotlight()
     func displaySelectedCash()
     func displaySelectedProduct()
+    func displayEmptyState()
 }
 
 class HomeViewController: UIViewController {
@@ -88,6 +89,10 @@ extension HomeViewController: HomeDisplayLogic {
     
     func displaySelectedProduct() {
         router?.routeToSelectedProduct()
+    }
+    
+    func displayEmptyState() {
+        router?.routeToEmptyState()
     }
 }
 

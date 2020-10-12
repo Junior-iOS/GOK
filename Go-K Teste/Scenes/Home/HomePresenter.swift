@@ -20,6 +20,7 @@ protocol HomePresentationLogic {
     func presentSelectedSpotlight()
     func presentSelectedCash()
     func presentSelectedProduct()
+    func presentEmptyState()
 }
 
 class HomePresenter: HomePresentationLogic {
@@ -43,5 +44,9 @@ class HomePresenter: HomePresentationLogic {
     
     func presentSelectedProduct() {
         viewController?.displaySelectedProduct()
+    }
+    
+    func presentEmptyState() {
+        viewController?.displayEmptyState()
     }
 }
