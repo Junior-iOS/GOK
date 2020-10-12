@@ -21,20 +21,38 @@ enum Home {
 }
 
 struct Spotlight: Codable {
-    let name: String
-    let bannerURL: String
+    let title: String
+    let image: String
     let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "name"
+        case image = "bannerURL"
+        case description
+    }
 }
 
 struct Product: Codable {
-    let name: String
-    let imageURL: String
+    let title: String
+    let image: String
     let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "name"
+        case image = "imageURL"
+        case description
+    }
 }
 
 struct Cash: Codable {
     let title: String
-    let bannerURL: String
+    let image: String
     let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case image = "bannerURL"
+        case description
+    }
 }
 

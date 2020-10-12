@@ -16,8 +16,10 @@ import UIKit
 
 protocol HomePresentationLogic {
     func reloadTableView()
-    func presentSelectedItem()
     func stopsActivityIndicator()
+    func presentSelectedSpotlight()
+    func presentSelectedCash()
+    func presentSelectedProduct()
 }
 
 class HomePresenter: HomePresentationLogic {
@@ -27,11 +29,19 @@ class HomePresenter: HomePresentationLogic {
         viewController?.reloadTableView()
     }
     
-    func presentSelectedItem() {
-        viewController?.displaySelectedItem()
-    }
-    
     func stopsActivityIndicator() {
         viewController?.stopsActivityIndicator()
+    }
+    
+    func presentSelectedSpotlight() {
+        viewController?.displaySelectedSpotlight()
+    }
+    
+    func presentSelectedCash() {
+        viewController?.displaySelectedCash()
+    }
+    
+    func presentSelectedProduct() {
+        viewController?.displaySelectedProduct()
     }
 }

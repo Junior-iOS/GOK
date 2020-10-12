@@ -15,11 +15,29 @@
 import UIKit
 
 protocol DetailPresentationLogic {
-    
+    func presentEmptyState()
+    func presentSelectedSpotlight(_ selectedItem: Spotlight?)
+    func presentSelectedCash(_ selectedItem: Cash?)
+    func presentSelectedProduct(_ selectedItem: Product?)
 }
 
 class DetailPresenter: DetailPresentationLogic {
     weak var viewController: DetailDisplayLogic?
-
+    
+    func presentSelectedSpotlight(_ selectedItem: Spotlight?) {
+        viewController?.displaySelectedSpotlight(selectedItem)
+    }
+    
+    func presentSelectedCash(_ selectedItem: Cash?) {
+        viewController?.displaySelectedCash(selectedItem)
+    }
+    
+    func presentSelectedProduct(_ selectedItem: Product?) {
+        viewController?.displaySelectedProduct(selectedItem)
+    }
+    
+    func presentEmptyState() {
+        viewController?.displayEmptyState()
+    }
     
 }

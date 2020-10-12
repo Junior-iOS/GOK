@@ -21,7 +21,7 @@ class SpotlightCollectionViewCell: UICollectionViewCell {
 
     func configure(_ viewModel: Spotlight?) {
         guard let spotlight = viewModel else { return }
-        imgContent.sd_setImage(with: URL(string: spotlight.bannerURL), completed: nil)
+        imgContent.sd_setImage(with: URL(string: spotlight.image), completed: nil)
     }
 
 }

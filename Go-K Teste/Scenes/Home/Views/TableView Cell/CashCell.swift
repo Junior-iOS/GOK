@@ -24,7 +24,7 @@ class CashCell: UITableViewCell {
     func configure(_ viewModel: Cash?) {
         guard let cash = viewModel else { return }
         lblTitle.text = cash.title
-        imgContent.sd_setImage(with: URL(string: cash.bannerURL), completed: nil)
+        imgContent.sd_setImage(with: URL(string: cash.image), completed: nil)
     }
     
 }

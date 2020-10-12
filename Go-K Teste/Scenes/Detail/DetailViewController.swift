@@ -11,16 +11,61 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol DetailDisplayLogic: class {
-    
+    func displaySelectedSpotlight(_ selectedItem: Spotlight?)
+    func displaySelectedCash(_ selectedItem: Cash?)
+    func displaySelectedProduct(_ selectedItem: Product?)
+    func displayEmptyState()
 }
 
 class DetailViewController: UIViewController {
     
-    
     var interactor: DetailBusinessLogic?
     var router: (NSObjectProtocol & DetailRoutingLogic & DetailDataPassing)?
+    
+    let kScreenWidth = UIScreen.main.bounds.width
+    let kScreenHeight = UIScreen.main.bounds.height
+    
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.isAccessibilityElement = true
+        view.alpha = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .yellow
+        
+        return view
+    }()
+    
+    lazy var imageContent: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "emptyState")
+        imageView.layer.masksToBounds = false
+        imageView.layer.cornerRadius = 40
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = .red
+        
+        return imageView
+    }()
+    
+    private lazy var lblDescription: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.text = "Nenhuma PullRequest localizada! =("
+        label.textAlignment = .center
+        label.textColor = UIColor.black
+        label.numberOfLines = 0
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isAccessibilityElement = true
+        label.accessibilityLabel = "Nenhuma PullRequest localizada!"
+        label.backgroundColor = .green
+           
+           return label
+       }()
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -44,11 +89,72 @@ class DetailViewController: UIViewController {
         router.viewController = viewController
         router.dataStore = interactor
     }
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupItAllUp()
+        interactor?.showSelectedItem()
+    }
 
 }
 
 extension DetailViewController: DetailDisplayLogic {
-
+    func displaySelectedSpotlight(_ selectedItem: Spotlight?) {
+        lblDescription.text = selectedItem?.description
+        imageContent.sd_setImage(with: URL(string: selectedItem?.image ?? ""), completed: nil)
+    }
     
+    func displaySelectedCash(_ selectedItem: Cash?) {
+        lblDescription.text = selectedItem?.description
+        imageContent.sd_setImage(with: URL(string: selectedItem?.image ?? ""), completed: nil)
+    }
+    
+    func displaySelectedProduct(_ selectedItem: Product?) {
+        lblDescription.text = selectedItem?.description
+        imageContent.sd_setImage(with: URL(string: selectedItem?.image ?? ""), completed: nil)
+    }
+    
+    func displayEmptyState() {
+        
+    }
 
+}
+
+// MARK: CUSTOM VIEW PROTOCOLS
+extension DetailViewController: CustomViewDelegate {
+    
+    func setupViews() {
+        view.addSubview(contentView)
+        contentView.addSubview(imageContent)
+        contentView.addSubview(lblDescription)
+    }
+    
+    func setupConstraints() {
+        NSLayoutConstraint.activate([contentView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+                                     contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+                                     contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+                                     contentView.bottomAnchor.constraint(equalTo: imageContent.topAnchor, constant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([imageContent.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+//                                     emptyStateImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+//                                     emptyStateImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+                                     imageContent.widthAnchor.constraint(equalToConstant: kScreenWidth),
+                                     imageContent.heightAnchor.constraint(equalToConstant: kScreenHeight / 2),
+                                     imageContent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+        ])
+        
+        NSLayoutConstraint.activate([lblDescription.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
+                                     lblDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40),
+                                     lblDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -40),
+                                     lblDescription.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40)
+                                     //lblDescription.heightAnchor.constraint(equalToConstant: 20)
+        ])
+    }
+    
+    func setupConfigurations() {
+        UIView.animate(withDuration: 0.5, delay: 0.01 * 1, animations: {
+            self.contentView.alpha = 1
+        })
+    }
 }

@@ -15,16 +15,32 @@
 import UIKit
 
 protocol DetailBusinessLogic {
-    
+    func showSelectedItem()
 }
 
 protocol DetailDataStore {
-    var selectedItem: AnyObject? { get set }
+    var selectedSpotlight: Spotlight? { get set }
+    var selectedCash: Cash? { get set }
+    var selectedProduct: Product? { get set }
 }
 
 class DetailInteractor: DetailBusinessLogic, DetailDataStore {
     var presenter: DetailPresentationLogic?
     var worker: DetailWorker?
     
-    var selectedItem: AnyObject?
+    var selectedSpotlight: Spotlight?
+    var selectedCash: Cash?
+    var selectedProduct: Product?
+    
+    func showSelectedItem() {
+        if selectedSpotlight != nil {
+            presenter?.presentSelectedSpotlight(selectedSpotlight)
+        } else if selectedCash != nil {
+            presenter?.presentSelectedCash(selectedCash)
+        } else if selectedProduct != nil {
+            presenter?.presentSelectedProduct(selectedProduct)
+        } else {
+            presenter?.presentEmptyState()
+        }
+    }
 }

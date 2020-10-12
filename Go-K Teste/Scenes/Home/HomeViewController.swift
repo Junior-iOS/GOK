@@ -14,8 +14,10 @@ import UIKit
 
 protocol HomeDisplayLogic: class {
     func reloadTableView()
-    func displaySelectedItem()
     func stopsActivityIndicator()
+    func displaySelectedSpotlight()
+    func displaySelectedCash()
+    func displaySelectedProduct()
 }
 
 class HomeViewController: UIViewController {
@@ -68,30 +70,45 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeDisplayLogic {
-    
     func reloadTableView() {
         tableView.reloadData()
-    }
-    
-    func displaySelectedItem() {
-        router?.routeToSelectedItem()
     }
     
     func stopsActivityIndicator() {
         activityIndicator.stopAnimating()
     }
     
+    func displaySelectedSpotlight() {
+        router?.routeToSelectedSpotlight()
+    }
+    
+    func displaySelectedCash() {
+        router?.routeToSelectedCash()
+    }
+    
+    func displaySelectedProduct() {
+        router?.routeToSelectedProduct()
+    }
 }
 
+// MARK: COLLECTION CELLS PROTOCOLS
 extension HomeViewController: SpotlightCellDelegate {
     func didSelectRowAt(_ indexPath: IndexPath) {
         interactor?.didSelectRowAt(indexPath: indexPath)
     }
 }
 
+extension HomeViewController: ProductCellDelegate {
+    func didSelectRow(at product: Product) {
+        interactor?.didSelectProduct(product)
+    }
+}
+
+// MARK: TABLEVIEW PROTOCOLS
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         interactor?.didSelectRowAt(indexPath: indexPath)
     }
     
@@ -118,6 +135,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.productCellIdentifier, for: indexPath) as? ProductCell else { return UITableViewCell() }
             cell.configure(interactor?.cellForRow(for: indexPath.section, at: indexPath) as? [Product])
+            cell.delegate = self
             return cell
         }
     }

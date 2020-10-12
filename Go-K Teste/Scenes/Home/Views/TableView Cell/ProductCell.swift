@@ -8,12 +8,16 @@
 
 import UIKit
 
+protocol ProductCellDelegate: class {
+    func didSelectRow(at product: Product)
+}
+
 class ProductCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     static let productCellIdentifier = "productCell"
-    
+    weak var delegate: ProductCellDelegate?
     var products: [Product]?
     
     override func awakeFromNib() {
@@ -50,7 +54,8 @@ class ProductCell: UITableViewCell {
 extension ProductCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        guard let product = products?[indexPath.row] else { return }
+        delegate?.didSelectRow(at: product)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

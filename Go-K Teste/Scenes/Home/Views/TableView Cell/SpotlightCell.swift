@@ -17,7 +17,7 @@ class SpotlightCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     static let spotlightCellIdentifier = "spotlightCellIdentifier"
-    var spotlight: [Spotlight]?
+    var spotlights: [Spotlight]?
     weak var delegate: SpotlightCellDelegate?
     
     override func awakeFromNib() {
@@ -45,7 +45,7 @@ class SpotlightCell: UITableViewCell {
     }
     
     func configure(_ viewModel: [Spotlight]?) {
-        spotlight = viewModel
+        spotlights = viewModel
         collectionView.reloadData()
     }
     
@@ -58,12 +58,12 @@ extension SpotlightCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return spotlight?.count ?? 0
+        return spotlights?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpotlightCollectionViewCell.spotlightCollectionCell, for: indexPath) as? SpotlightCollectionViewCell else { return UICollectionViewCell() }
-        cell.configure(spotlight?[indexPath.row])
+        cell.configure(spotlights?[indexPath.row])
         return cell
     }
     

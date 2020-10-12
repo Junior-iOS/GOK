@@ -20,27 +20,33 @@ protocol HomeBusinessLogic {
     
     func cellForRow(for section: Int, at indexPath: IndexPath) -> AnyObject?
     func didSelectRowAt(indexPath: IndexPath)
+    func didSelectProduct(_ product: Product)
     func fetchList()
 }
 
 protocol HomeDataStore {
-    var selectedItem: AnyObject? { get set }
     var spotlights: [Spotlight]?  { get set }
     var cash: Cash? { get set }
     var products: [Product]? { get set }
+    
+    var selectedSpotlight: Spotlight? { get set }
+    var selectedCash: Cash? { get set }
+    var selectedProduct: Product? { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
+    
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
-    
-    var homeList = [Home.Response]()
-    var selectedItem: AnyObject?
     
     var spotlights: [Spotlight]?
     var cash: Cash?
     var products: [Product]?
     var sections: [AnyObject]?
+    
+    var selectedSpotlight: Spotlight?
+    var selectedCash: Cash?
+    var selectedProduct: Product?
     
     init(worker: HomeWorker = HomeWorker()) {
         self.worker = worker
@@ -73,8 +79,19 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     func didSelectRowAt(indexPath: IndexPath) {
-        selectedItem = sections?[indexPath.row]
-        presenter?.presentSelectedItem()
+        switch indexPath.section {
+        case 0:
+            guard let itemSelection = sections?[0] as? [Spotlight] else { return }
+            selectedSpotlight = itemSelection[indexPath.row]
+            presenter?.presentSelectedSpotlight()
+            break
+        case 1:
+            guard let item = cash as Cash? else { return }
+            selectedCash = item
+            presenter?.presentSelectedCash()
+        default:
+            break
+        }
     }
     
     func cellForRow(for section: Int, at indexPath: IndexPath) -> AnyObject? {
@@ -86,6 +103,11 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         default:
             return products as AnyObject?
         }
+    }
+    
+    func didSelectProduct(_ product: Product) {
+        selectedProduct = product
+        presenter?.presentSelectedProduct()
     }
     
 }

@@ -13,7 +13,9 @@
 import UIKit
 
 @objc protocol HomeRoutingLogic {
-    func routeToSelectedItem()
+    func routeToSelectedSpotlight()
+    func routeToSelectedCash()
+    func routeToSelectedProduct()
 }
 
 protocol HomeDataPassing {
@@ -23,15 +25,41 @@ protocol HomeDataPassing {
 class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     weak var viewController: HomeViewController?
     var dataStore: HomeDataStore?
-
-    func routeToSelectedItem() {
+    
+    func routeToSelectedSpotlight() {
         let vc = DetailViewController()
-        var destinationDS = vc.router!.dataStore!
-        passDataToDetail(source: dataStore!, destination: &destinationDS)
+        guard let destinationDataStore = vc.router?.dataStore else { return }
+        var destinationDS = destinationDataStore
+        passSpotlightDataToDetail(source: dataStore!, destination: &destinationDS)
         viewController?.present(vc, animated: true)
     }
     
-    func passDataToDetail(source: HomeDataStore, destination: inout DetailDataStore) {
-        destination.selectedItem = source.selectedItem
+    func passSpotlightDataToDetail(source: HomeDataStore, destination: inout DetailDataStore) {
+        destination.selectedSpotlight = source.selectedSpotlight
     }
+    
+    func routeToSelectedCash() {
+        let vc = DetailViewController()
+        guard let destinationDataStore = vc.router?.dataStore else { return }
+        var destinationDS = destinationDataStore
+        passCashDataToDetail(source: dataStore!, destination: &destinationDS)
+        viewController?.present(vc, animated: true)
+    }
+    
+    func passCashDataToDetail(source: HomeDataStore, destination: inout DetailDataStore) {
+        destination.selectedCash = source.selectedCash
+    }
+
+    func routeToSelectedProduct() {
+        let vc = DetailViewController()
+        guard let destinationDataStore = vc.router?.dataStore else { return }
+        var destinationDS = destinationDataStore
+        passProductDataToDetail(source: dataStore!, destination: &destinationDS)
+        viewController?.present(vc, animated: true)
+    }
+    
+    func passProductDataToDetail(source: HomeDataStore, destination: inout DetailDataStore) {
+        destination.selectedProduct = source.selectedProduct
+    }
+    
 }

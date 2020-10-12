@@ -17,8 +17,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
     func configure(_ viewModel: Product?) {
         guard let product = viewModel else { return }
-        print(product.name)
-        imgContent.sd_setImage(with: URL(string: product.imageURL), completed: nil)
+        print(product.title)
+        imgContent.sd_setImage(with: URL(string: product.image), completed: nil)
     }
 
 }
