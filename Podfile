@@ -13,6 +13,9 @@ target 'Go-K Teste' do
   target 'Go-K TesteTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Nimble'
+    pod 'Quick'
+    pod 'Cuckoo'
   end
 
 end

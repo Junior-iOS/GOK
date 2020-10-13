@@ -15,11 +15,11 @@
 import Foundation
 import PromiseKit
 
-protocol HomeNetworkProtocol {
+protocol HomeNetworkLogic {
     func searchList() -> Promise<Home.Response>
 }
 
-class HomeWorker: HomeNetworkProtocol {
+class HomeWorker: HomeNetworkLogic {
     
     let networkProvider = NetworkProvider.shared
     

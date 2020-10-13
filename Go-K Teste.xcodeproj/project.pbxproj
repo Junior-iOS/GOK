@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06DA8EECF06C6CEFB9C23AA4 /* Pods_Go_K_TesteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF412E1364E1E5AD6D67BCA /* Pods_Go_K_TesteTests.framework */; };
 		1411C47E252E405F0061A6B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C47D252E405F0061A6B0 /* AppDelegate.swift */; };
 		1411C480252E405F0061A6B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C47F252E405F0061A6B0 /* SceneDelegate.swift */; };
 		1411C487252E40600061A6B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1411C486252E40600061A6B0 /* Assets.xcassets */; };
 		1411C48A252E40600061A6B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1411C488252E40600061A6B0 /* LaunchScreen.storyboard */; };
-		1411C495252E40600061A6B0 /* Go_K_TesteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C494252E40600061A6B0 /* Go_K_TesteTests.swift */; };
 		1411C4A2252E40D30061A6B0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4A1252E40D30061A6B0 /* BaseViewController.swift */; };
 		1411C4A6252E41410061A6B0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4A5252E41410061A6B0 /* Endpoint.swift */; };
 		1411C4A8252E41510061A6B0 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411C4A7252E41510061A6B0 /* NetworkProvider.swift */; };
@@ -41,9 +41,13 @@
 		1418DEB4253023C7004C9FDA /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418DEB2253023C7004C9FDA /* ProductCollectionViewCell.swift */; };
 		1418DEB5253023C7004C9FDA /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1418DEB3253023C7004C9FDA /* ProductCollectionViewCell.xib */; };
 		14A9540F2532E979009AC9F8 /* CustomViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A9540E2532E979009AC9F8 /* CustomViewDelegate.swift */; };
-		14A954112534B500009AC9F8 /* DetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A954102534B500009AC9F8 /* DetailHeader.swift */; };
-		3DCE36E82941003C47DB942F /* Pods_Go_K_TesteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D7367832ECBA23A1DDCF7A /* Pods_Go_K_TesteTests.framework */; };
-		C71ED7F8D406DE586C47268C /* Pods_Go_K_Teste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE141EC1356DD5A41C9F649 /* Pods_Go_K_Teste.framework */; };
+		14A954152534D4BD009AC9F8 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A954142534D4BD009AC9F8 /* Data+Extensions.swift */; };
+		14A954172534D4EA009AC9F8 /* JSONReaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A954162534D4EA009AC9F8 /* JSONReaderHelper.swift */; };
+		14A9541A2534D6DB009AC9F8 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = 14A954192534D6DB009AC9F8 /* home.json */; };
+		14A9541E2534D88D009AC9F8 /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A9541D2534D88D009AC9F8 /* HomePresenterMock.swift */; };
+		14A954202534DB0F009AC9F8 /* HomeWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A9541F2534DB0F009AC9F8 /* HomeWorkerMock.swift */; };
+		14A954232534DFF3009AC9F8 /* HomeInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A954222534DFF3009AC9F8 /* HomeInteractorTest.swift */; };
+		8D3898F40A863079BED24320 /* Pods_Go_K_Teste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6D1BA292D2501DA2D6B593 /* Pods_Go_K_Teste.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0077FA44E0AF4BE9884DC385 /* Pods-Go-K Teste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K Teste.release.xcconfig"; path = "Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste.release.xcconfig"; sourceTree = "<group>"; };
-		0BDF1D1147CB8D2C7BAAA6C5 /* Pods-Go-K Teste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K Teste.debug.xcconfig"; path = "Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste.debug.xcconfig"; sourceTree = "<group>"; };
+		0E37A2EECA98660A219399E3 /* Pods-Go-K TesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K TesteTests.debug.xcconfig"; path = "Target Support Files/Pods-Go-K TesteTests/Pods-Go-K TesteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1411C47A252E405F0061A6B0 /* Go-K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go-K.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1411C47D252E405F0061A6B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1411C47F252E405F0061A6B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +69,6 @@
 		1411C489252E40600061A6B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1411C48B252E40600061A6B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1411C490252E40600061A6B0 /* Go-K TesteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Go-K TesteTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1411C494252E40600061A6B0 /* Go_K_TesteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go_K_TesteTests.swift; sourceTree = "<group>"; };
 		1411C496252E40600061A6B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1411C4A1252E40D30061A6B0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1411C4A5252E41410061A6B0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -96,12 +98,23 @@
 		1418DEAF253021C4004C9FDA /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		1418DEB2253023C7004C9FDA /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		1418DEB3253023C7004C9FDA /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		141A7450253513CB00E87983 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		141A74532535162D00E87983 /* Cuckoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cuckoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		141A74552535182E00E87983 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		141A74592535183400E87983 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A9540E2532E979009AC9F8 /* CustomViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDelegate.swift; sourceTree = "<group>"; };
-		14A954102534B500009AC9F8 /* DetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeader.swift; sourceTree = "<group>"; };
-		6020E985C4C95351BD178A8E /* Pods-Go-K TesteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K TesteTests.release.xcconfig"; path = "Target Support Files/Pods-Go-K TesteTests/Pods-Go-K TesteTests.release.xcconfig"; sourceTree = "<group>"; };
-		9BE141EC1356DD5A41C9F649 /* Pods_Go_K_Teste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go_K_Teste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6D7367832ECBA23A1DDCF7A /* Pods_Go_K_TesteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go_K_TesteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDACC8AB74C9BB52C38376E5 /* Pods-Go-K TesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K TesteTests.debug.xcconfig"; path = "Target Support Files/Pods-Go-K TesteTests/Pods-Go-K TesteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		14A954142534D4BD009AC9F8 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		14A954162534D4EA009AC9F8 /* JSONReaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReaderHelper.swift; sourceTree = "<group>"; };
+		14A954192534D6DB009AC9F8 /* home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
+		14A9541C2534D88D009AC9F8 /* Go-K TesteTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Go-K TesteTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		14A9541D2534D88D009AC9F8 /* HomePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMock.swift; sourceTree = "<group>"; };
+		14A9541F2534DB0F009AC9F8 /* HomeWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerMock.swift; sourceTree = "<group>"; };
+		14A954222534DFF3009AC9F8 /* HomeInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTest.swift; sourceTree = "<group>"; };
+		8F6D1BA292D2501DA2D6B593 /* Pods_Go_K_Teste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go_K_Teste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A66606F7DA08A4E189DFFD58 /* Pods-Go-K TesteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K TesteTests.release.xcconfig"; path = "Target Support Files/Pods-Go-K TesteTests/Pods-Go-K TesteTests.release.xcconfig"; sourceTree = "<group>"; };
+		B8C653BCDE676F4F700D8DED /* Pods-Go-K Teste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K Teste.release.xcconfig"; path = "Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste.release.xcconfig"; sourceTree = "<group>"; };
+		FC899684F826DE63A0B65834 /* Pods-Go-K Teste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Go-K Teste.debug.xcconfig"; path = "Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste.debug.xcconfig"; sourceTree = "<group>"; };
+		FCF412E1364E1E5AD6D67BCA /* Pods_Go_K_TesteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Go_K_TesteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C71ED7F8D406DE586C47268C /* Pods_Go_K_Teste.framework in Frameworks */,
+				8D3898F40A863079BED24320 /* Pods_Go_K_Teste.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DCE36E82941003C47DB942F /* Pods_Go_K_TesteTests.framework in Frameworks */,
+				06DA8EECF06C6CEFB9C23AA4 /* Pods_Go_K_TesteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +144,7 @@
 				1411C493252E40600061A6B0 /* Go-K TesteTests */,
 				1411C47B252E405F0061A6B0 /* Products */,
 				DF1A28AA27F657C2EA268943 /* Pods */,
-				C5F76BC12A476F36187EFE10 /* Frameworks */,
+				F7AE67687BCA9501FA357F75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,7 +173,8 @@
 		1411C493252E40600061A6B0 /* Go-K TesteTests */ = {
 			isa = PBXGroup;
 			children = (
-				1411C494252E40600061A6B0 /* Go_K_TesteTests.swift */,
+				14A9541B2534D86D009AC9F8 /* Mocks */,
+				14A954212534DFCC009AC9F8 /* Scene */,
 				1411C496252E40600061A6B0 /* Info.plist */,
 			);
 			path = "Go-K TesteTests";
@@ -252,7 +266,6 @@
 		1411C4C4252EA1C90061A6B0 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				14A9540C2532E15A009AC9F8 /* Views */,
 				1411C4C6252EA1EA0061A6B0 /* DetailWorker.swift */,
 				1411C4C7252EA1EA0061A6B0 /* DetailRouter.swift */,
 				1411C4C8252EA1EA0061A6B0 /* DetailModels.swift */,
@@ -275,40 +288,81 @@
 			path = "CollectionView Cell";
 			sourceTree = "<group>";
 		};
-		14A9540C2532E15A009AC9F8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				14A954102534B500009AC9F8 /* DetailHeader.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		14A9540D2532E950009AC9F8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				14A9540E2532E979009AC9F8 /* CustomViewDelegate.swift */,
+				14A954122534D490009AC9F8 /* Protocols */,
+				14A954132534D4A6009AC9F8 /* Helpers */,
+				14A954182534D678009AC9F8 /* JSON Files */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C5F76BC12A476F36187EFE10 /* Frameworks */ = {
+		14A954122534D490009AC9F8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				9BE141EC1356DD5A41C9F649 /* Pods_Go_K_Teste.framework */,
-				B6D7367832ECBA23A1DDCF7A /* Pods_Go_K_TesteTests.framework */,
+				14A9540E2532E979009AC9F8 /* CustomViewDelegate.swift */,
 			);
-			name = Frameworks;
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		14A954132534D4A6009AC9F8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				14A954142534D4BD009AC9F8 /* Data+Extensions.swift */,
+				14A954162534D4EA009AC9F8 /* JSONReaderHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		14A954182534D678009AC9F8 /* JSON Files */ = {
+			isa = PBXGroup;
+			children = (
+				14A954192534D6DB009AC9F8 /* home.json */,
+			);
+			path = "JSON Files";
+			sourceTree = "<group>";
+		};
+		14A9541B2534D86D009AC9F8 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				14A9541C2534D88D009AC9F8 /* Go-K TesteTests-Bridging-Header.h */,
+				14A9541D2534D88D009AC9F8 /* HomePresenterMock.swift */,
+				14A9541F2534DB0F009AC9F8 /* HomeWorkerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		14A954212534DFCC009AC9F8 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				14A954222534DFF3009AC9F8 /* HomeInteractorTest.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		DF1A28AA27F657C2EA268943 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0BDF1D1147CB8D2C7BAAA6C5 /* Pods-Go-K Teste.debug.xcconfig */,
-				0077FA44E0AF4BE9884DC385 /* Pods-Go-K Teste.release.xcconfig */,
-				BDACC8AB74C9BB52C38376E5 /* Pods-Go-K TesteTests.debug.xcconfig */,
-				6020E985C4C95351BD178A8E /* Pods-Go-K TesteTests.release.xcconfig */,
+				FC899684F826DE63A0B65834 /* Pods-Go-K Teste.debug.xcconfig */,
+				B8C653BCDE676F4F700D8DED /* Pods-Go-K Teste.release.xcconfig */,
+				0E37A2EECA98660A219399E3 /* Pods-Go-K TesteTests.debug.xcconfig */,
+				A66606F7DA08A4E189DFFD58 /* Pods-Go-K TesteTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F7AE67687BCA9501FA357F75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				141A74592535183400E87983 /* Quick.framework */,
+				141A74552535182E00E87983 /* Nimble.framework */,
+				141A74532535162D00E87983 /* Cuckoo.framework */,
+				141A7450253513CB00E87983 /* Nimble.framework */,
+				8F6D1BA292D2501DA2D6B593 /* Pods_Go_K_Teste.framework */,
+				FCF412E1364E1E5AD6D67BCA /* Pods_Go_K_TesteTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,11 +372,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1411C499252E40600061A6B0 /* Build configuration list for PBXNativeTarget "Go-K Teste" */;
 			buildPhases = (
-				BD687A93A70574FDE0ECA028 /* [CP] Check Pods Manifest.lock */,
+				D0EE8423EED8E34D0409D400 /* [CP] Check Pods Manifest.lock */,
 				1411C476252E405F0061A6B0 /* Sources */,
 				1411C477252E405F0061A6B0 /* Frameworks */,
 				1411C478252E405F0061A6B0 /* Resources */,
-				AC6B9480A96E4E78DCF14F87 /* [CP] Embed Pods Frameworks */,
+				D69827518A22A98264BAEDA3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -337,10 +391,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1411C49C252E40600061A6B0 /* Build configuration list for PBXNativeTarget "Go-K TesteTests" */;
 			buildPhases = (
-				035450F001EF0C16AB7F29F6 /* [CP] Check Pods Manifest.lock */,
+				30D23FF69B9D70FDDD72225C /* [CP] Check Pods Manifest.lock */,
+				141A74522535154500E87983 /* CUCKOO */,
 				1411C48C252E40600061A6B0 /* Sources */,
 				1411C48D252E40600061A6B0 /* Frameworks */,
 				1411C48E252E40600061A6B0 /* Resources */,
+				CAC7D89DE3AC8105F5662843 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -367,6 +423,7 @@
 					};
 					1411C48F252E40600061A6B0 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 						TestTargetID = 1411C479252E405F0061A6B0;
 					};
 				};
@@ -395,6 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A9541A2534D6DB009AC9F8 /* home.json in Resources */,
 				1418DEA825300A16004C9FDA /* SpotlightCell.xib in Resources */,
 				1418DEB1253021C4004C9FDA /* ProductCell.xib in Resources */,
 				1418DEB5253023C7004C9FDA /* ProductCollectionViewCell.xib in Resources */,
@@ -417,7 +475,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		035450F001EF0C16AB7F29F6 /* [CP] Check Pods Manifest.lock */ = {
+		141A74522535154500E87983 /* CUCKOO */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = CUCKOO;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/FileName1.swift\" \\\n\"${INPUT_DIR}/FileName2.swift\" \\\n\"${INPUT_DIR}/FileName3.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+		};
+		30D23FF69B9D70FDDD72225C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -439,24 +515,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC6B9480A96E4E78DCF14F87 /* [CP] Embed Pods Frameworks */ = {
+		CAC7D89DE3AC8105F5662843 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Go-K TesteTests/Pods-Go-K TesteTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Go-K TesteTests/Pods-Go-K TesteTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Go-K TesteTests/Pods-Go-K TesteTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BD687A93A70574FDE0ECA028 /* [CP] Check Pods Manifest.lock */ = {
+		D0EE8423EED8E34D0409D400 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -478,6 +554,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D69827518A22A98264BAEDA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Go-K Teste/Pods-Go-K Teste-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -494,17 +587,18 @@
 				1418DEA725300A16004C9FDA /* SpotlightCell.swift in Sources */,
 				1411C4CC252EA1EA0061A6B0 /* DetailWorker.swift in Sources */,
 				1411C4B8252E42940061A6B0 /* HomeInteractor.swift in Sources */,
+				14A954152534D4BD009AC9F8 /* Data+Extensions.swift in Sources */,
 				1418DEB4253023C7004C9FDA /* ProductCollectionViewCell.swift in Sources */,
 				14A9540F2532E979009AC9F8 /* CustomViewDelegate.swift in Sources */,
 				1411C4D0252EA1EA0061A6B0 /* DetailInteractor.swift in Sources */,
 				1411C4CB252EA1EA0061A6B0 /* DetailPresenter.swift in Sources */,
-				14A954112534B500009AC9F8 /* DetailHeader.swift in Sources */,
 				1411C4A6252E41410061A6B0 /* Endpoint.swift in Sources */,
 				1411C4CF252EA1EA0061A6B0 /* DetailViewController.swift in Sources */,
 				1411C4CE252EA1EA0061A6B0 /* DetailModels.swift in Sources */,
 				1418DEA1253001D3004C9FDA /* CashCell.swift in Sources */,
 				1411C4AA252E415E0061A6B0 /* NetworkError.swift in Sources */,
 				1411C4A2252E40D30061A6B0 /* BaseViewController.swift in Sources */,
+				14A954172534D4EA009AC9F8 /* JSONReaderHelper.swift in Sources */,
 				1411C4B6252E42940061A6B0 /* HomeModels.swift in Sources */,
 				1411C4B7252E42940061A6B0 /* HomeViewController.swift in Sources */,
 				1411C4B4252E42940061A6B0 /* HomeWorker.swift in Sources */,
@@ -517,7 +611,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1411C495252E40600061A6B0 /* Go_K_TesteTests.swift in Sources */,
+				14A954232534DFF3009AC9F8 /* HomeInteractorTest.swift in Sources */,
+				14A954202534DB0F009AC9F8 /* HomeWorkerMock.swift in Sources */,
+				14A9541E2534D88D009AC9F8 /* HomePresenterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,7 +755,7 @@
 		};
 		1411C49A252E40600061A6B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BDF1D1147CB8D2C7BAAA6C5 /* Pods-Go-K Teste.debug.xcconfig */;
+			baseConfigurationReference = FC899684F826DE63A0B65834 /* Pods-Go-K Teste.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -678,7 +774,7 @@
 		};
 		1411C49B252E40600061A6B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0077FA44E0AF4BE9884DC385 /* Pods-Go-K Teste.release.xcconfig */;
+			baseConfigurationReference = B8C653BCDE676F4F700D8DED /* Pods-Go-K Teste.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -697,10 +793,11 @@
 		};
 		1411C49D252E40600061A6B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDACC8AB74C9BB52C38376E5 /* Pods-Go-K TesteTests.debug.xcconfig */;
+			baseConfigurationReference = 0E37A2EECA98660A219399E3 /* Pods-Go-K TesteTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DV26HR9J2M;
 				INFOPLIST_FILE = "Go-K TesteTests/Info.plist";
@@ -712,6 +809,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.njdevelopment.Go-K-TesteTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Go-K TesteTests/Mocks/Go-K TesteTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Go-K Teste.app/Go-K Teste";
@@ -720,10 +819,11 @@
 		};
 		1411C49E252E40600061A6B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6020E985C4C95351BD178A8E /* Pods-Go-K TesteTests.release.xcconfig */;
+			baseConfigurationReference = A66606F7DA08A4E189DFFD58 /* Pods-Go-K TesteTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DV26HR9J2M;
 				INFOPLIST_FILE = "Go-K TesteTests/Info.plist";
@@ -735,6 +835,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.njdevelopment.Go-K-TesteTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Go-K TesteTests/Mocks/Go-K TesteTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Go-K Teste.app/Go-K Teste";

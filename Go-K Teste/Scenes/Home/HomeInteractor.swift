@@ -37,7 +37,7 @@ protocol HomeDataStore {
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     var presenter: HomePresentationLogic?
-    var worker: HomeWorker?
+    var worker: HomeNetworkLogic?
     
     var spotlights: [Spotlight]?
     var cash: Cash?
@@ -48,7 +48,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var selectedCash: Cash?
     var selectedProduct: Product?
     
-    init(worker: HomeWorker = HomeWorker()) {
+    init(worker: HomeNetworkLogic = HomeWorker()) {
         self.worker = worker
     }
     
