@@ -22,7 +22,7 @@ O projeto foi desenvolvido com a arquitetura **Clean Swift**, câmada nativa de 
 
 Para executar o projeto, execute os comandos abaixo no terminal:
 ```sh
-$ cd <diretorio-base>/Go-K Teste/
+$ cd <diretorio-base>/Digi_Teste/
 $ pod install
 ```
 
