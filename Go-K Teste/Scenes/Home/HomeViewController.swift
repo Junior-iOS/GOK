@@ -129,17 +129,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SpotlightCell.spotlightCellIdentifier, for: indexPath) as? SpotlightCell else { return UITableViewCell() }
-            cell.configure(interactor?.cellForRow(for: indexPath.section, at: indexPath) as? [Spotlight])
+            cell.configure(interactor?.cellForRow(for: indexPath.section) as? [Spotlight])
             cell.delegate = self
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CashCell.cashCellIdentifier, for: indexPath) as? CashCell else { return UITableViewCell() }
-            cell.configure(interactor?.cellForRow(for: indexPath.section, at: indexPath) as? Cash)
+            cell.configure(interactor?.cellForRow(for: indexPath.section) as? Cash)
             return cell
             
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.productCellIdentifier, for: indexPath) as? ProductCell else { return UITableViewCell() }
-            cell.configure(interactor?.cellForRow(for: indexPath.section, at: indexPath) as? [Product])
+            cell.configure(interactor?.cellForRow(for: indexPath.section) as? [Product])
             cell.delegate = self
             return cell
         }

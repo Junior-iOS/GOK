@@ -18,7 +18,7 @@ protocol HomeBusinessLogic {
     func numberOfRows(for section: Int) -> Int
     var numberOfSections: Int { get }
     
-    func cellForRow(for section: Int, at indexPath: IndexPath) -> AnyObject?
+    func cellForRow(for section: Int) -> AnyObject?
     func didSelectRowAt(indexPath: IndexPath)
     func didSelectProduct(_ product: Product)
     func fetchList()
@@ -94,7 +94,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         }
     }
     
-    func cellForRow(for section: Int, at indexPath: IndexPath) -> AnyObject? {
+    func cellForRow(for section: Int) -> AnyObject? {
         switch section {
         case 0:
             return spotlights as AnyObject?
