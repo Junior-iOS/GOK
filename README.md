@@ -1,4 +1,13 @@
-# Digi_test
+<p align="center">
+    <img src="https://img.shields.io/badge/Swift-5.5-orange.svg" />
+    <img src="https://img.shields.io/badge/Xcode-13.0-orange.svg" />
+    <img src="https://img.shields.io/badge/platforms-iOS-brightgreen.svg?style=flat" alt="iOS" />
+    <a href="https://www.linkedin.com/in/nelson-junior-70b113100/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-@NelsonJunior-blue.svg?style=flat" alt="LinkedIn: @NelsonJunior" />
+    </a>
+</p>
+
+# Go-K Teste
 ### Implementação iOS do Amazon AWS API
 
 Versão mínima: iOS 13</br>
